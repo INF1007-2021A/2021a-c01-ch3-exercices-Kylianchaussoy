@@ -21,9 +21,10 @@ def to_radians(angle_degs: float, angle_mins: float, angle_secs: float) -> float
 
 
 def to_degrees(angle_rads: float) -> tuple:
-    degres = angle_rads//(180/math.pi)
-    minutes = (angle_rads-degres*math.pi/180)//60*180/math.pi
-    secondes = (angle_rads-degres*math.pi/180-minutes*minutes*math.pi/(60*180))/(3600*180/math.pi)
+    degres = angle_rads//(math.pi/180)
+    minutes = (angle_rads - degres*math.pi/180)//(math.pi/180*60)
+    secondes = (angle_rads - degres*math.pi/180 - minutes*math.pi/180*60)/(math.pi/180*3600)
+
     return degres, minutes, secondes
 
 
@@ -42,7 +43,7 @@ def main() -> None:
 
     print(f"Moyenne des nombres 2, 4, 6: {average(2, 4, 6)}")
 
-    print(f"Conversion de 100 degres, 2 minutes et 45 secondes en radians: {to_radians(100, 2, 45)}")
+    print(f"Conversion de 180 degres, 2 minutes et 45 secondes en radians: {to_radians(180, 2, 45)}")
     
     degrees, minutes, seconds = to_degrees(1.0)
     print(f"Conversion de 1 radian en degres: {degrees} degres, {minutes} minutes et {seconds} secondes")
