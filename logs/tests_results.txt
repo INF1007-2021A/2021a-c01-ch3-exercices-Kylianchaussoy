@@ -1,0 +1,51 @@
+test_average (__main__.TestExercice) ... ok
+test_square (__main__.TestExercice) ... ok
+test_square_root (__main__.TestExercice) ... ok
+test_to_celsius (__main__.TestExercice) ... ok
+test_to_degrees (__main__.TestExercice) ... FAIL
+test_to_farenheit (__main__.TestExercice) ... ok
+test_to_radians (__main__.TestExercice) ... FAIL
+
+======================================================================
+FAIL: test_to_degrees (__main__.TestExercice)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "test_exercice.py", line 83, in test_to_degrees
+    self.assertListEqual(
+AssertionError: Lists differ: [(0.0, 0.0, 9.69627362219072e-06), (-1.0, -[107 chars]-05)] != [(79.0980174562859, 5.881047377154118, 29.6[197 chars]998)]
+
+First differing element 0:
+(0.0, 0.0, 9.69627362219072e-06)
+(79.0980174562859, 5.881047377154118, 29.612494192724625)
+
+- [(0.0, 0.0, 9.69627362219072e-06),
+-  (-1.0, -57.29577951308232, -2.393756092407032e-05),
+-  (0.0, 0.0, 2.42406840554768e-05),
+-  (0.0, 0.0, 1.982887955738002e-05)]
++ [(79.0980174562859, 5.881047377154118, 29.612494192724625),
++  (-278.1960349125718, 48.23790524569176, 0.7750116145507491),
++  (257.74504364071475, -15.297381557114704, 44.031235481811564),
++  (213.95544569810457, -2.673258113725865, 23.057550624127998)] : Mauvais calcul de radians -> degres
+
+======================================================================
+FAIL: test_to_radians (__main__.TestExercice)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "test_exercice.py", line 64, in test_to_radians
+    self.assertListEqual(
+AssertionError: Lists differ: [-0.0[13 chars]503, 0.17598251810595045, 6.283490739798685, 6.997344948274799] != [-0.0[13 chars]503, 0.17598251810595048, 6.283490739798685, 6.9973449482748]
+
+First differing element 1:
+0.17598251810595045
+0.17598251810595048
+
++ [-0.08668468618238503, 0.17598251810595048, 6.283490739798685, 6.9973449482748]
+- [-0.08668468618238503,
+-  0.17598251810595045,
+-  6.283490739798685,
+-  6.997344948274799] : Mauvais calcul de degres -> radians
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.001s
+
+FAILED (failures=2)
