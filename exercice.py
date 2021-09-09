@@ -42,7 +42,7 @@ def main() -> None:
 
     print(f"Moyenne des nombres 2, 4, 6: {average(2, 4, 6)}")
 
-    print(f"Conversion de 180 degres, 2 minutes et 45 secondes en radians: {to_radians(180, 2, 45)}")
+    print(f"Conversion de 100 degres, 2 minutes et 45 secondes en radians: {to_radians(100, 2, 45)}")
     
     degrees, minutes, seconds = to_degrees(1.0)
     print(f"Conversion de 1 radian en degres: {degrees} degres, {minutes} minutes et {seconds} secondes")
